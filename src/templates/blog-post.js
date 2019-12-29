@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Disqus from 'gatsby-plugin-disqus'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -43,6 +44,11 @@ class BlogPostTemplate extends React.Component {
             style={{
               marginBottom: rhythm(1),
             }}
+          />
+           <Disqus 
+            identifier={post.id}
+            title={post.title}
+            url={this.props.location.href}
           />
           <footer>
             <Bio />
